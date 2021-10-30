@@ -1,0 +1,23 @@
+{% extends "blog/base.html" %}
+{% block content %}
+    <h1 class="my-4">Latest Posts
+        <small>From Various Markets</small>
+    </h1>
+
+    <!-- Blog Post -->
+    {% for post in posts %}
+    <div class="card mb-4">
+        <img class="card-img-top" src="{{post.image.url}}" alt="Card image cap">
+        <div class="card-body">
+        <h2 class="card-title">{{post.title}}</h2>
+        <p class="card-text">{{post.content}}</p>
+        <a href="#" class="btn btn-primary">Read More &rarr;</a>
+        </div>
+        <div class="card-footer text-muted">
+            Aurthor : <a href="#">{{post.written_by}}</a> </br>
+            {{post.date_posted}} 
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}
+
